@@ -1,0 +1,12 @@
+#!/bin/bash
+
+tput clear
+clear
+
+
+tput cup 3 19
+tput setaf 3
+echo "Enter System Password Below to Continue"
+tput sgr0
+
+sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update && sudo apt-get --force-yes -y install oracle-java7-installer

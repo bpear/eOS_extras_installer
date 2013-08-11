@@ -1,0 +1,12 @@
+#!/bin/bash
+
+tput clear
+clear
+
+
+tput cup 3 19
+tput setaf 3
+echo "Enter System Password Below to Continue"
+tput sgr0
+
+sudo apt-get --force-yes -y install ubuntu-restricted-extras
