@@ -1,1 +1,120 @@
 #!/bin/bash
+reset
+export VER=v0.1.0
+tput cup 0 20
+tput setaf 3
+echo "Welcome to elementaryOS extras installer $VER"
+tput sgr0
+
+tput cup 1 29
+tput setaf 3
+echo "by Bpear"
+tput sgr0
+
+tput cup 2 5
+echo "--------------------------------------------------------------"
+tput sgr0
+
+
+tput cup 4 30
+tput rev 
+echo "Main Menu"
+tput sgr0
+
+tput cup 5 15
+echo "1. Enable encrypted DVD playback"
+
+tput cup 6 15
+echo "2. Install Ubuntu Restricted Extras (flash, MS fonts, codecs etc)"  
+
+tput cup 7 15
+echo "3. Install extra codecs"
+
+tput cup 8 15 
+echo "4. Install OpenJRE 7 and icedtea (OpenJava)"
+
+tput cup 9 15
+echo "5. Install Oracle Java 7"
+
+tput cup 10 15
+echo "6. Install 64Bit Chrome stable (Other versions added later)"
+
+tput cup 11 15
+echo "7. Full Install (1-6)"
+
+
+
+tput cup 28 15
+echo "0. Exit"
+
+
+tput bold 
+tput cup 26 26
+echo -n "Enter Your Choice  "
+tput sgr0
+while read fg
+do
+
+###########################
+if [ $fg == 1 ]; then
+echo "enable dvd playback"
+sudo chmod 755 scripts/dvd
+scripts/dvd
+###########################
+elif [ $fg == 2 ]; then
+echo "Ubuntu unrestricted extras"
+sudo chmod 755 scripts/ubuntuextras
+scripts/ubuntuextras
+###########################
+elif [ $fg == 3 ]; then
+echo "Extra codecs"
+sudo chmod 755 scripts/codecs
+scripts/codecs
+###########################
+elif [ $fg == 4 ]; then
+echo "Open Java"
+sudo chmod 755 scripts/jre
+scripts/jre
+###########################
+elif [ $fg == 5 ]; then
+echo "Oracle Java 7"
+sudo chmod 755 scripts/oracle
+scripts/oracle
+###########################
+elif [ $fg == 6 ]; then
+echo "Install 64Bit Chrome"
+sudo chmod 755 scripts/chrome
+scripts/chrome
+###########################
+elif [ $fg == 7 ]; then
+echo "Full Install"
+sudo chmod 755 scripts/dvd
+scripts/dvd
+sleep 2
+sudo chmod 755 scripts/ubuntuextras
+scripts/ubuntuextras
+sleep 2
+sudo chmod 755 scripts/codecs
+scripts/codecs
+sleep 2
+sudo chmod 755 scripts/jre
+scripts/jre
+sleep 2
+sudo chmod 755 scripts/oracle
+scripts/oracle
+sleep 2
+sudo chmod 755 scripts/chrome
+scripts/chrome
+###########################
+
+tput bold 
+tput cup 12 15
+tput setaf 3
+echo "Not a Valid selection, Choose again"
+tput sgr0
+fi
+tput bold 
+tput cup 30 26
+echo -n "Enter Your Choice  "
+tput sgr0
+done
