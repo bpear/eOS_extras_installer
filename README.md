@@ -6,4 +6,4 @@ $ unzip eOS_extras_installer.zip
 
 $ cd eOS_extras_installer-master
 
-$ sh ./start
+$ bash ./start
